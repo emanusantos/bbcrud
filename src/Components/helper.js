@@ -3,6 +3,7 @@ import { Container } from './Container.js';
 import { Input } from './Input.js';
 import { InputArea } from './InputArea.js';
 import { Form } from './Form.js';
+import { Navbar } from './Navbar.js';
 
 export {
     Button,
@@ -10,4 +11,5 @@ export {
     Input,
     InputArea,
     Form,
+    Navbar,
 };
