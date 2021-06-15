@@ -5,5 +5,5 @@ export const Input = styled.input`
     border: none;
     border-radius: 0em .5em .5em 0em;
     outline: none;
-    padding: .3em;
+    padding: .3em .3em .3em 1em;
 `;
