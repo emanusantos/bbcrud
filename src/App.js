@@ -1,10 +1,9 @@
 import React from 'react';
+import LoginRegister from './Pages/loginRegister';
 
 function App() {
   return (
-    <div className="App">
-      <h1>salve</h1>
-    </div>
+    <LoginRegister />
   );
 }
 
