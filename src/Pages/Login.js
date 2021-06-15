@@ -8,8 +8,8 @@ export default function Login() {
     const [password, setPassword] = useState('');
 
     return (
-        <Container>
-            <Form action="">
+        <Container padding={'10em'}>
+            <Form padding ={'2em'} action="">
             <h4>Username</h4>
                 <InputArea>
                     <FaUser /><Input type="text" onChange={event => {setUsername(event.target.value)}} />
