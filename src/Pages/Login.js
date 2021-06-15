@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaUser, FaUserLock } from 'react-icons/fa';
-import { Button, Container, Input, InputArea, LoginForm } from '../Components/helper.js';
+import { Button, Container, Input, InputArea, Form } from '../Components/helper.js';
 
 export default function Login() {
 
@@ -9,7 +9,7 @@ export default function Login() {
 
     return (
         <Container>
-            <LoginForm action="">
+            <Form action="">
             <h4>Username</h4>
                 <InputArea>
                     <FaUser /><Input type="text" onChange={event => {setUsername(event.target.value)}} />
@@ -19,7 +19,7 @@ export default function Login() {
                     <FaUserLock /><Input type="password" onChange={event => {setPassword(event.target.value)}} />
                 </InputArea>
                 <Button>Sign In</Button>
-            </LoginForm>
+            </Form>
         </Container>
     )
 }
