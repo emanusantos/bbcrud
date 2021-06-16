@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const InputArea = styled.div`
     display: flex;
+    justify-content: center;
     margin-top: .3em;
     margin-bottom: .5em;
     padding: .2em;

@@ -4,6 +4,7 @@ import { Input } from './Input.js';
 import { InputArea } from './InputArea.js';
 import { Form } from './Form.js';
 import { Navbar } from './Navbar.js';
+import { Error } from './Error.js';
 
 export {
     Button,
@@ -12,4 +13,5 @@ export {
     InputArea,
     Form,
     Navbar,
+    Error
 };

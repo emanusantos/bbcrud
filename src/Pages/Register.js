@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Container, Input, InputArea, Form } from '../Components/helper.js';
+import { Button, Container, Input, InputArea, Form, Error } from '../Components/helper.js';
 import Axios from 'axios';
 
 export default function Login() {
@@ -14,8 +14,8 @@ export default function Login() {
     async function addUser(e) {
         e.preventDefault()
 
-        if (name.length < 2) {
-            return setError('Your name should');
+        if (name.length < 2 || usernameReg.length < 2 || passwordReg.length < 2) {
+            return setError('Your credentials should have at least 2 or more characters!');
         }
 
         try {
@@ -36,7 +36,7 @@ export default function Login() {
     return (
         <Container padding={'6em'}>
             <Form onSubmit={addUser} padding ={'4em'}>
-            {error}
+            <Error>{error}</Error>
             <h4>Name</h4>
                 <InputArea>
                     <Input type="text" onChange={event => {setName(event.target.value)}} minLength="2" />
