@@ -8,9 +8,19 @@ export default function Login() {
     const [email, setEmail] = useState('');
     const [usernameReg, setUsernameReg] = useState('');
     const [passwordReg, setPasswordReg] = useState('');
+    const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
 
-    const addUser = async () => {
+    async function addUser(e) {
+        e.preventDefault()
+
+        if (name.length < 2) {
+            return setError('Your name should');
+        }
+
         try {
+            setError('');
+            setLoading(true);
             await Axios.post('http://localhost:3001/create', {
                 name: name,
                 email: email,
@@ -25,10 +35,11 @@ export default function Login() {
 
     return (
         <Container padding={'6em'}>
-            <Form padding ={'4em'}>
+            <Form onSubmit={addUser} padding ={'4em'}>
+            {error}
             <h4>Name</h4>
                 <InputArea>
-                    <Input type="text" onChange={event => {setName(event.target.value)}} />
+                    <Input type="text" onChange={event => {setName(event.target.value)}} minLength="2" />
                 </InputArea>
             <h4>E-mail</h4>
                 <InputArea>
@@ -36,13 +47,13 @@ export default function Login() {
                 </InputArea>
             <h4>Username</h4>
                 <InputArea>
-                    <Input type="text" onChange={event => {setUsernameReg(event.target.value)}} />
+                    <Input type="text" onChange={event => {setUsernameReg(event.target.value)}} minLength="2" maxLength="12"  />
                 </InputArea>
             <h4>Password</h4>
                 <InputArea>
-                    <Input type="password" onChange={event => {setPasswordReg(event.target.value)}} />
+                    <Input type="password" onChange={event => {setPasswordReg(event.target.value)}} minLength="6" maxLength="12"  />
                 </InputArea>
-                <Button type="button" onClick={addUser}>Register</Button>
+                <Button type="submit" disabled={loading}>Register</Button>
             </Form>
         </Container>
     )
