@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Navbar } from '../Components/helper.js';
+import { Navbar, Card } from '../Components/helper.js';
 
 export default function Characters() {
 
@@ -25,8 +25,10 @@ export default function Characters() {
             <ul>
                 {character.map(item => (
                 <li>
-                    <img src={`${item.img}`} alt="" />
-                    {item.name}
+                    <Card>
+                        <img src={`${item.img}`} alt="" />
+                        <p>{item.name}</p>
+                    </Card>
                 </li>
                 ))}
             </ul>

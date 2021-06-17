@@ -5,6 +5,7 @@ import { InputArea } from './InputArea.js';
 import { Form } from './Form.js';
 import { Navbar } from './Navbar.js';
 import { Error } from './Error.js';
+import { Card } from './Card.js';
 
 export {
     Button,
@@ -13,5 +14,6 @@ export {
     InputArea,
     Form,
     Navbar,
-    Error
+    Error,
+    Card
 };
